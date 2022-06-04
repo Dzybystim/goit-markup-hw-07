@@ -30,14 +30,131 @@ body {
 h1,h2,h3,h4,h5,h6,p {
     margin: 0;
 }
-.link {
+
+/*Header******************************************/
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container--centering {
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--main-color-text);
+    margin-right: 93px;
+
+    animation-name: animatelogo;
+    animation-duration: 3000ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-delay: 1000ms;
+}
+.logo__part {
+    color: var(--accent-color-text);
+}
+
+.logo__part-two {
+    color: var(--three-color-text);
+}
+
+.no-line {
     text-decoration: none;
 }
+
+
+.navigator {
+    display: flex;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navigator__item {
+    margin-right: 50px;
+}
+.navigator__item:last-child {
+    margin-right: 0;
+}
+.navigator__link
+ {
+    font-weight: 500;
+    color: var(--main-color-text);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: block;
+    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigator__link:hover,
+.navigator__link:focus
+ {
+    color: var(--accent-color-text);
+}
+
 .list {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
+
+.current {
+    color: var(--accent-color-text);
+    position: relative;
+}
+.current::after {
+    content: " ";
+
+    display: block;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 2px;
+
+    background-color: var(--accent-color-text);
+}
+.contact-header {
+    margin-left: auto;
+    display: flex;
+}
+.contact-header__link {
+    font-weight: 500;
+    color: var(--second-color-text);
+    margin-right: 50px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-header__link:last-child {
+    margin-right: 0;
+}
+
+.contact-header__link:hover ,
+.contact-header__link:focus {
+    color: var(--accent-color-text);
+}
+
+.contact-header__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+
+
+/*Hero*******************/
 .button {
     font-family: inherit;
     color: var(--three-color-text);
@@ -67,112 +184,7 @@ h1,h2,h3,h4,h5,h6,p {
     animation-iteration-count: infinite;
    
 }
-.container {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-/*Header******************************************/
-.logo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-    color: var(--main-color-text);
-    margin-right: 93px;
 
-    animation-name: animatelogo;
-    animation-duration: 3000ms;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-delay: 1000ms;
-}
-
-.logo>.logo-first {
-    color: var(--accent-color-text);
-}
-.logo-second {
-    color: var(--three-color-text) ;
-}
-.nvitem
- {
-    font-weight: 500;
-    color: var(--main-color-text);
-    padding-top: 32px;
-    padding-bottom: 32px;
-    display: block;
-    
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.nvitem:hover,
-.nvitem:focus
- {
-    color: var(--accent-color-text);
-}
-
-.current {
-    color: var(--accent-color-text);
-    position: relative;
-}
-.current::after {
-    content: " ";
-
-    display: block;
-    height: 4px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    border-radius: 2px;
-
-    background-color: var(--accent-color-text);
-}
-.hdcontact {
-    font-weight: 500;
-    color: var(--second-color-text);
-    margin-right: 50px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.hdcontact:last-child {
-    margin-right: 0;
-}
-
-.hdcontact:hover ,
-.hdcontact:focus {
-    color: var(--accent-color-text);
-
-}
-
-.navigator-list {
-    display: flex;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.navigator-list>li {
-    margin-right: 50px;
-}
-.navigator-list>li:last-child {
-    margin-right: 0;
-}
-.main-nav {
-    align-items: center;
-    display: flex;
-}
-.contact-icon {
-    margin-right: 10px;
-    fill: currentColor;
-}
-
-
-/*Hero*******************/
 .hero,
 .footer {
     background-color: var(--first-bg);
@@ -217,10 +229,7 @@ h1,h2,h3,h4,h5,h6,p {
     margin-bottom: 30px;
 
 }
-.contact-header {
-    margin-left: auto;
-    display: flex;
-}
+
 /*What are we doing**************/
 .what-are-we-doing>.dot-list {
     display: flex;
